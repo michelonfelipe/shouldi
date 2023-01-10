@@ -3,7 +3,6 @@ const phrases = [
   'General kenobi!'
 ]
 
-
 function pickPhrase() {
   const phraseElement = document.getElementById('phrase')
   const randomIndex = Math.floor(Math.random() * phrases.length)
@@ -11,4 +10,8 @@ function pickPhrase() {
   phraseElement.innerHTML = phrases[randomIndex]
 }
 
-window.onload = function() {pickPhrase()}
+function shuffle() {
+  alert('You do not need to shuffle, accept your answer!')
+}
+
+window.onload = function() { pickPhrase() }

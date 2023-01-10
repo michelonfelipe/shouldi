@@ -11,8 +11,25 @@ body {
   text-align: center;
   background-color: black;
 }
-p {
+p#phrase {
   font-family: 'Fira Code';
   font-size: 100px;
   color: whitesmoke;
+}
+
+button#shuffle {
+  border-radius: 50px;
+  border-color: whitesmoke;
+  color: whitesmoke;
+  padding: 10px 20px;
+  font-size: 80px;
+  background-color: inherit;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+
+button#shuffle:hover, button#shuffle:focus {
+  background-color: whitesmoke;
+  color: black;
 }
