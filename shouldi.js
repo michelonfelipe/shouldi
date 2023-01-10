@@ -4,10 +4,25 @@ const phrases = [
 ]
 
 function pickPhrase() {
+  const phrase = generatePhrase()
   const phraseElement = document.getElementById('phrase')
-  const randomIndex = Math.floor(Math.random() * phrases.length)
-  console.log(randomIndex)
-  phraseElement.innerHTML = phrases[randomIndex]
+
+  phraseElement.innerHTML = phrase
+}
+
+function generatePhrase() {
+  const previousPhrase = JSON.parse(localStorage.getItem('previousPhrase'))
+  const ONE_MINUTE_IN_MS = 60000
+
+  // to prevent from just refreshing and getting another answer
+  if (previousPhrase != null && (Date.now() - ONE_MINUTE_IN_MS) < previousPhrase.generatedAt) {
+    return previousPhrase.phrase
+  } else {
+    const randomIndex = Math.floor(Math.random() * phrases.length)
+    const phrase = phrases[randomIndex]
+    localStorage.setItem('previousPhrase', JSON.stringify({ generatedAt: Date.now(), phrase: phrase }))
+    return phrase
+  }
 }
 
 function shuffle() {
