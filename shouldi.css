@@ -1,6 +1,7 @@
 html {
   height: 100%;
 }
+
 body {
   min-height: 100%;
   display: flex;
@@ -11,9 +12,10 @@ body {
   text-align: center;
   background-color: black;
 }
+
 p#phrase {
   font-family: 'Fira Code';
-  font-size: 100px;
+  font-size: 7em;
   color: whitesmoke;
 }
 
@@ -22,12 +24,11 @@ button#shuffle {
   border-color: whitesmoke;
   color: whitesmoke;
   padding: 10px 20px;
-  font-size: 80px;
+  font-size: 6em;
   background-color: inherit;
   cursor: pointer;
   transition-duration: 0.3s;
 }
-
 
 button#shuffle:hover, button#shuffle:focus {
   background-color: whitesmoke;
