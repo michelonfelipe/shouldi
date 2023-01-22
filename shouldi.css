@@ -2,7 +2,7 @@ html {
   height: 100%;
 }
 
-body {
+body.phrase-selector {
   min-height: 100%;
   display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@ body {
 
 p#phrase {
   font-family: 'Fira Code';
-  font-size: 8vw;
+  font-size: min(8vw, 120px);
   color: whitesmoke;
 }
 
@@ -24,7 +24,7 @@ button#shuffle {
   border-color: whitesmoke;
   color: whitesmoke;
   padding: 10px 20px;
-  font-size: 5vw;
+  font-size: min(5vw, 60px);
   background-color: inherit;
   cursor: pointer;
   transition-duration: 0.3s;
@@ -33,4 +33,56 @@ button#shuffle {
 button#shuffle:hover, button#shuffle:focus {
   background-color: whitesmoke;
   color: black;
+}
+
+a#same-answer-tip {
+  position: fixed;
+  top: 1%;
+  color: grey;
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: 'Fira Code';
+  font-size: max(1.5vw, 15px);
+}
+
+body.faq {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: black;
+}
+
+h1.faq {
+  font-family: 'Fira Code';
+  font-size: min(7vw, 50px);
+  color: whitesmoke;
+  font-weight: 700;
+}
+
+h2.faq {
+  font-family: 'Fira Code';
+  font-size: min(6vw, 40px);
+  color: whitesmoke;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+p.faq {
+  margin-top: 0;
+  padding-top: 0;
+  font-family: 'Fira Code';
+  font-size: min(5vw, 35px);
+  color: whitesmoke;
+}
+
+a.faq {
+  font-family: 'Fira Code';
+    font-size: min(5vw, 35px);
+    color: gray;
+    text-decoration: underline;
+    cursor: pointer;
 }

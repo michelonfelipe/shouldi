@@ -1,3 +1,11 @@
+const ONE_MINUTE_IN_MS = 60000
+
+const last = JSON.parse(localStorage.getItem('previousPhrase'))
+const lastPhrase = last?.phrase
+const lastGeneratedAt = last?.generatedAt
+const lastPhraseTooRecent = lastPhrase != null && (Date.now() - ONE_MINUTE_IN_MS) < lastGeneratedAt
+
+
 function pickPhrase() {
   const phrase = generatePhrase()
   const phraseElement = document.getElementById('phrase')
@@ -6,12 +14,10 @@ function pickPhrase() {
 }
 
 function generatePhrase() {
-  const previousPhrase = JSON.parse(localStorage.getItem('previousPhrase'))
-  const ONE_MINUTE_IN_MS = 60000
 
   // to prevent from just refreshing and getting another answer
-  if (previousPhrase != null && (Date.now() - ONE_MINUTE_IN_MS) < previousPhrase.generatedAt) {
-    return previousPhrase.phrase
+  if (lastPhraseTooRecent) {
+    return lastPhrase
   } else {
     const randomIndex = Math.floor(Math.random() * phrases.length)
     const phrase = phrases[randomIndex]
@@ -24,14 +30,21 @@ function shuffle() {
   alert('You do not need to shuffle, accept your answer!')
 }
 
-window.onload = function() { pickPhrase() }
+function showTipIfNeeded() {
+  if (!lastPhraseTooRecent) {
+    document.getElementById('same-answer-tip').style.display = 'none'
+  }
+}
+
+window.onload = function() {
+  pickPhrase()
+  showTipIfNeeded()
+}
 
 const phrases = [
   'Yes',
   'That will be awesome',
   "YOLOOOOOOO (that's a yes)",
-  '',
-
   'No',
   'Why even bother',
   'Take a nap instead',
