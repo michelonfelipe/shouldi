@@ -1,8 +1,3 @@
-const phrases = [
-  'Hello There!',
-  'General kenobi!'
-]
-
 function pickPhrase() {
   const phrase = generatePhrase()
   const phraseElement = document.getElementById('phrase')
@@ -30,3 +25,15 @@ function shuffle() {
 }
 
 window.onload = function() { pickPhrase() }
+
+const phrases = [
+  'Yes',
+  'That will be awesome',
+  "YOLOOOOOOO (that's a yes)",
+  '',
+
+  'No',
+  'Why even bother',
+  'Take a nap instead',
+  'Expect to be disappointed'
+]
