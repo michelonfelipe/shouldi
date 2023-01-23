@@ -1,9 +1,9 @@
-const ONE_MINUTE_IN_MS = 60000
+const THIRTY_SECONDS_IN_MS = 30000
 
 const last = JSON.parse(localStorage.getItem('previousPhrase'))
 const lastPhrase = last?.phrase
 const lastGeneratedAt = last?.generatedAt
-const lastPhraseTooRecent = lastPhrase != null && (Date.now() - ONE_MINUTE_IN_MS) < lastGeneratedAt
+const lastPhraseTooRecent = lastPhrase != null && (Date.now() - THIRTY_SECONDS_IN_MS) < lastGeneratedAt
 
 
 function pickPhrase() {
@@ -45,6 +45,7 @@ const phrases = [
   'Yes',
   'That will be awesome',
   "YOLOOOOOOO (that's a yes)",
+
   'No',
   'Why even bother',
   'Take a nap instead',
