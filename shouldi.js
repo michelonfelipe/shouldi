@@ -43,11 +43,20 @@ window.onload = function() {
 
 const phrases = [
   'Yes',
+  'Yep',
+  'Go for it',
+  'Just do it',
+  'Definitely yes',
   'That will be awesome',
+  'YEEEEEEEEEEEEEEEEEES',
   "YOLOOOOOOO (that's a yes)",
 
   'No',
+  'Nope',
+  'No, no, and no',
   'Why even bother',
+  'Absolutely not',
+  'Not in a million years',
   'Take a nap instead',
   'Expect to be disappointed'
 ]
